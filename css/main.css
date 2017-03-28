@@ -1,7 +1,104 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:700");
+@import url("https://fonts.googleapis.com/css?family=Bevan");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
 *,
 *:before,
 *:after {
   box-sizing: border-box; }
 
+body {
+  font-family: 'Open Sans', sans-serif; }
+
 img {
   max-width: 100%; }
+
+.header {
+  background-color: steelblue;
+  padding: 1em 0; }
+  .header__container {
+    width: 90%;
+    margin: 0 auto; }
+  .header__icons-container {
+    text-align: center;
+    position: relative; }
+  .header__logo {
+    width: 13em;
+    fill: #fff; }
+  @media screen and (max-width: 767px) {
+    .header__menu-title {
+      display: none; } }
+  .header__menu-icon {
+    width: 3em;
+    height: 3em;
+    fill: #fff;
+    cursor: pointer;
+    position: fixed;
+    right: 1em;
+    top: 1em;
+    z-index: 600; }
+
+.main-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .main-nav__navigation {
+    background-color: rgba(194, 182, 158, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100vh;
+    padding-right: 1em; }
+  .main-nav__list, .main-nav__social-list {
+    margin: 0;
+    padding-left: 0;
+    list-style: none; }
+  .main-nav__list {
+    text-align: right;
+    padding-top: 1em; }
+  .main-nav__item {
+    margin-bottom: 1.5em; }
+  .main-nav__link {
+    text-decoration: none;
+    color: #EFE8E0;
+    font-family: "Oswald", sans-serif;
+    font-size: 2.7em;
+    text-transform: uppercase;
+    transition: all 50ms ease-in; }
+    .main-nav__link:hover {
+      color: #500000; }
+  .main-nav__side-bar {
+    background-color: #c2b69e;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100vh; }
+  .main-nav__rotate {
+    transform: rotate(90deg);
+    position: absolute;
+    top: 10em;
+    background-color: steelblue; }
+  .main-nav__social-follow {
+    color: #EFE8E0;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.4em; }
+  .main-nav__social-item {
+    display: inline-block; }
+  .main-nav__social-icon-fb, .main-nav__social-icon-in, .main-nav__social-icon-tw {
+    fill: #EFE8E0;
+    width: 2.5em;
+    transition: all 50ms ease-in; }
+    .main-nav__social-icon-fb:hover, .main-nav__social-icon-in:hover, .main-nav__social-icon-tw:hover {
+      fill: #fff; }
+
+@keyframes {
+  0% { }
+  50% { }
+  100% { } }

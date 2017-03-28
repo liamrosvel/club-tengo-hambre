@@ -4,6 +4,53 @@
 	box-sizing: border-box;
 }
 
+//color variables
+$color1: #3C3531;
+$color2: #c2b69e;
+$color3: #F0EDE8;
+$color4: #312d2b;
+$color5: #500000;
+
+//Fonts
+
+//Import font-family for titles
+@import url('https://fonts.googleapis.com/css?family=Oswald:700');
+
+//font-family for titles
+$fontTitle: 'Oswald', sans-serif;
+
+//Import font-family for important titles
+@import url('https://fonts.googleapis.com/css?family=Bevan');
+
+//font font-family for important titles
+$fontImportant: 'Bevan', cursive;
+
+//Import font-family for general text
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+
+//font-weight for general text
+$normal: 400;
+$medium: 600;
+
+
+//General styles
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
 img {
 	max-width: 100%;
 }
+
+//@imports
+@import "partials/header";
+@import "partials/main-nav";
+@import "partials/landing";
+@import "partials/package";
+@import "partials/about";
+@import "partials/press";
+@import "partials/blog";
+@import "partials/contact";
+@import "partials/footer";

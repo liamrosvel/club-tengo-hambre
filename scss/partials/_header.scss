@@ -1,0 +1,38 @@
+.header {
+	background-color: steelblue;
+	padding: 1em 0;
+
+	&__container {
+		width: 90%;
+		margin: 0 auto;
+	}
+	&__icons-container {
+		text-align: center;
+		position: relative;
+	}
+	&__logo {
+		width: 13em;
+		fill: #fff;
+	}
+	&__menu-icons {
+
+	}
+	&__menu-title {
+
+		@media screen and (max-width: 767px) {
+			display: none;
+		}
+	}
+	//svg icon styles
+	&__menu-icon {
+		width: 3em;
+		height: 3em;
+		fill: #fff;
+		cursor: pointer;
+
+		position: fixed;
+		right: 1em;
+		top: 1em;
+		z-index: 600;
+	}
+}
