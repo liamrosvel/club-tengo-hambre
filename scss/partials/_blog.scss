@@ -4,6 +4,14 @@
 	&__container {
 		width: 90%;
 		margin: 0 auto;
+
+		@media screen and (min-width: 1024px) {
+			width: 85%;
+		}
+
+		@media screen and (min-width: 1200px) {
+			width: 1110px;
+		}
 	}
 	&__header {
 
@@ -35,53 +43,97 @@
 	//Articles blog items
 	&__items-container {
 		margin-top: 4em;
+
+		@media screen and (min-width: 768px) {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
 	}
 	&__item {
-		margin-bottom: 2em;
+		margin-bottom: 2.5em;
+
+		@media screen and (min-width: 768px) {
+			width: 48%;
+		}
+
+		@media screen and (min-width: 1024px) {
+			width: 32%;
+		}
 	}
-	&__item-img-container {
-		margin: 0;
-		padding: 0;
-		line-height: 0;
-		border: 8px solid $color1;
-		overflow: hidden;
+	&__item-3 {
+		@media screen and (max-width: 1023px) {
+			display: none;
+		}
 	}
-	&__item-img {
-		transform: scale(1.1);
+	&__item-img-container-1 {
+		background: url(../images/item-blog-1.jpg) 50% 50% / cover no-repeat;
+		height: 12em;
+		border-radius: 8px 8px 0 0;
+
+		@media screen and (min-width: 640px) {
+			height: 15em;
+		}
 	}
-	&__item-body {
-		background-color: rgba($color2, .3);
-		padding: 2em 1em;
+	&__item-img-container-2 {
+		background: url(../images/item-blog-2.jpg) 50% 50% / cover no-repeat;
+		height: 12em;
+		border-radius: 8px 8px 0 0;
+
+		@media screen and (min-width: 640px) {
+			height: 15em;
+		}
+	}
+	&__item-img-container-3 {
+		background: url(../images/item-blog-3.jpg) 50% 50% / cover no-repeat;
+		height: 12em;
+		border-radius: 8px 8px 0 0;
+
+		@media screen and (min-width: 640px) {
+			height: 15em;
+		}
+	}
+	&__item-body-post {
+		background-color: #fff;
+		padding: 1.5em 1em;
+		border-radius: 0 0 8px 8px;
 	}
 	&__item-date {
-		color: rgba($color4, .8);
 		margin-top: 0;
+		color: rgba($color1, .5);
+	}
+	&__item-category,
+	&__item-link-title {
+		text-decoration: none;
 	}
 	&__item-category {
-		text-transform: uppercase;
-		color: $color5;
+		color: rgba($color5, .5);
+	}
+	&__item-link-title {
+		color: rgba($color1, .7);
 	}
 	&__item-title {
-		color: rgba($color4, .8);
-		line-height: 1.5;
-		font-size: 1.5em;
+
 	}
-	&__item-button {
-		text-decoration: none;
-		color: rgba($color5, .6);
+	&__item-excerpt {
+		color: rgba($color1, .7);
 		font-size: 1.1em;
-		display: inline-block;
-		line-height: 3;
-		font-family: $fontImportant;
-		position: relative;
-		&:after {
-			content: " ";
-			width: 100%;
-			height: 3px;
-			background-color: rgba($color5, .6);
-			position: absolute;
-			top: 2.5em;
-			left: 0;
+		line-height: 1.5;
+
+		@media screen and (min-width: 1024px) {
+			font-size: 1em;
+		}
+	}
+	&__item-read-more {
+		color: rgba($color5, .5);
+		font-size: 1.1em;
+
+		&:hover {
+			color: $color5;
+		}
+
+		@media screen and (min-width: 1024px) {
+			font-size: 1em;
 		}
 	}
 	//Newsletter section
@@ -89,36 +141,27 @@
 		margin-top: 6em;
 		background-color: rgba($color2, .7);
 		padding: 1.5em 1em;
+		text-align: center;
 	}
 	&__newsletter-content {
+		
+		@media screen and (min-width: 768px) {
+			width: 80%;
+			margin: 0 auto;
+		}
 
+		@media screen and (min-width: 1024px) {
+			width: 50%;
+		}
 	}
 	&__newsletter-header {
 		margin-bottom: 4em;
 	}
-	&__newsletter-header-title,
-	&__newsletter-header-subtitle {
-		color: rgba(#fff, .6);
-		font-family: $fontTitle;
-	}
 	&__newsletter-header-title {
 		margin: 0;
 		font-size: 2.5em;
-	}
-	&__newsletter-header-subtitle {
-		margin-top: .5em;
-		font-size: 1.7em;
-		position: relative;
-		padding-left: 1.2em;
-		&:before {
-			content: " ";
-			width: 1em;
-			height: 3.5px;
-			background-color: rgba(#fff, .6);
-			position: absolute;
-			left: 0;
-			top: .6em; 
-		}
+		color: rgba(#fff, .6);
+		font-family: $fontTitle;
 	}
 	//form style
 	&__newsletter-form {

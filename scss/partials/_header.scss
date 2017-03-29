@@ -15,6 +15,14 @@
 	&__container {
 		width: 90%;
 		margin: 0 auto;
+
+		@media screen and (min-width: 1024px) {
+			width: 85%;
+		}
+
+		@media screen and (min-width: 1200px) {
+			width: 1110px;
+		}
 	}
 	&__icons-container {
 		text-align: center;
@@ -23,14 +31,31 @@
 	&__logo {
 		width: 13em;
 		fill: #fff;
+
+		@media screen and (min-width: 1024px) {
+			width: 18em;
+		}
 	}
 	&__menu-icons {
 
+		@media screen and (min-width: 768px) {
+			position: absolute;
+			right: 0;
+			top: -1em;
+			z-index: 700;
+			cursor: pointer;
+		}
 	}
 	&__menu-title {
 
 		@media screen and (max-width: 767px) {
 			display: none;
+		}
+		@media screen and (min-width: 768px) {
+			font-size: 1.95em;
+			color: #fff;
+			text-transform: uppercase;
+			font-family: $fontTitle;
 		}
 	}
 	//svg icon styles
@@ -38,11 +63,19 @@
 		width: 3em;
 		height: 3em;
 		fill: #fff;
-		cursor: pointer;
 
-		position: absolute;
-		right: 0;
-		top: -.1em;
-		z-index: 600;
+		@media screen and (max-width: 767px) {
+			position: absolute;
+			right: 0;
+			top: -.1em;
+			z-index: 600;
+			cursor: pointer;
+		}
+
+		@media screen and (min-width: 768px) {
+			position: relative;
+			top: .7em;
+		}
 	}
+
 }

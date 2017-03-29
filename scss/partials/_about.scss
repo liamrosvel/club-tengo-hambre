@@ -3,14 +3,34 @@
 	background:
 		linear-gradient(rgba(194, 182, 158, .75 ), rgba(194, 182, 158, .75 )),
 		url(../images/about-small.jpg) 50% 50% / cover no-repeat;
+
+	@media screen and (min-width: 768px) {
+		background:
+			linear-gradient(rgba(194, 182, 158, .75 ), rgba(194, 182, 158, .75 )),
+		url(../images/about-bg-big.jpg) 50% 50% / cover no-repeat;
+	}
+
 	&__container {
 		width: 90%;
 		margin: 0 auto;
 		text-align: center;
+
+		@media screen and (min-width: 1024px) {
+			width: 85%;
+		}
+
+		@media screen and (min-width: 1200px) {
+			width: 1110px;
+		}
 	}
 	&__elements-container {
 		background-color: rgba($color2, .5);
 		padding: 1.5em 1em;
+
+		@media screen and (min-width: 1200px) {
+			width: 80%;
+			margin: 0 auto;
+		}
 	}
 	&__title {
 		font-size: 1.8em;

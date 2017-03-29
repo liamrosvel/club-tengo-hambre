@@ -2,10 +2,29 @@
 	background:
 		linear-gradient(rgba(194, 182, 158, .6), rgba(194, 182, 158, .6)), 
 		url(../images/footer-bg-small.jpg) 50% 50% / cover no-repeat;
-	padding: 6em  0;
+	padding: 7em  0;
+
+	@media screen and (min-width: 480px) and (max-width: 1023px) {
+		padding: 10em 0;
+	}
+
+	@media screen and (min-width: 768px) {
+		background:
+			linear-gradient(rgba(194, 182, 158, .6), rgba(194, 182, 158, .6)), 
+		url(../images/footer-bg-big.jpg) 50% 50% / cover no-repeat;
+	}
+
 	&__container {
 		width: 90%;
 		margin: 0 auto;
+
+		@media screen and (min-width: 1024px) {
+			width: 85%;
+		}
+
+		@media screen and (min-width: 1200px) {
+			width: 1110px;
+		}
 	}
 	&__elements-container {
 		text-align: center;
@@ -28,10 +47,18 @@
 	&__header-title-1 {
 		margin: 0 0 .2em 0;
 		font-size: 2.6em;
+
+		@media screen and (min-width: 1024px) {
+			font-size: 3em;
+		}
 	}
 	&__header-title-2 {
 		margin-top: 0;
 		font-size: 2.3em;
+
+		@media screen and (min-width: 1024px) {
+			font-size: 2.5em;
+		}
 	}
 	//svg logo styles
 	&__social-container {
