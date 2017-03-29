@@ -1,6 +1,16 @@
 .header {
-	background-color: steelblue;
+	background-color: transparent;
 	padding: 1em 0;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 550;
+	transition: all 250ms ease-out;
+
+	&.scroll-header {
+		background-color: $color2;
+	}
 
 	&__container {
 		width: 90%;
@@ -30,9 +40,9 @@
 		fill: #fff;
 		cursor: pointer;
 
-		position: fixed;
-		right: 1em;
-		top: 1em;
+		position: absolute;
+		right: 0;
+		top: -.1em;
 		z-index: 600;
 	}
 }

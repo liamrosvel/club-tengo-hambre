@@ -1,0 +1,76 @@
+.footer {
+	background:
+		linear-gradient(rgba(194, 182, 158, .6), rgba(194, 182, 158, .6)), 
+		url(../images/footer-bg-small.jpg) 50% 50% / cover no-repeat;
+	padding: 6em  0;
+	&__container {
+		width: 90%;
+		margin: 0 auto;
+	}
+	&__elements-container {
+		text-align: center;
+	}
+	&__header {
+		margin-bottom: 5em;
+	}
+	&__header-title-1,
+	&__header-title-2 {
+		color: #fff;
+		font-family: $fontImportant;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+	&__header-title-1,
+	&__header-title-2,
+	&__logo  {
+		opacity: .8;
+	}
+	&__header-title-1 {
+		margin: 0 0 .2em 0;
+		font-size: 2.6em;
+	}
+	&__header-title-2 {
+		margin-top: 0;
+		font-size: 2.3em;
+	}
+	//svg logo styles
+	&__social-container {
+		
+	}
+	&__logo {
+		width: 14em;
+		fill: #fff;
+		margin-bottom: 2em;
+	}
+	//social list
+	&__social-list {
+		margin: 0;
+		padding-left: 0;
+		list-style: none;
+	}
+	&__social-item {
+		display: inline-block;
+	}
+	&__social-link {
+		
+	}
+	&__social-logo-fb,
+	&__social-logo-in,
+	&__social-logo-tw {
+		fill: #EFE8E0;
+		width: 2.5em;
+		transition: all 50ms ease-in;
+		&:hover {
+			fill: #fff;
+		}
+	}
+	&__social-logo-fb {
+
+	}
+	&__social-logo-in {
+		margin: 0 2em;
+	}
+	&__social-logo-tw {
+
+	}
+}

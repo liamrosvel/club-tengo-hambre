@@ -1,0 +1,56 @@
+.landing {
+	background:
+		linear-gradient(rgba(194, 182, 158, .6), rgba(194, 182, 158, .6)), 
+		url(../images/landing-small.jpg) 50% 50% / cover no-repeat;
+	padding: 4em 0;
+	&__container {
+		width: 90%;
+		margin: 0 auto;
+		text-align: center;
+	}
+	&__copy-content {
+		margin: 5em 0;
+	}
+	&__header {
+
+	}
+	&__header-title-1,
+	&__header-title-2,
+	&__header-subtitle,
+	&__button {
+		color: #fff;
+		font-family: $fontImportant;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+	}
+	&__header-title-1,
+	&__header-title-2 {
+		opacity: .8;
+	}
+	&__header-title-1 {
+		margin: 0 0 .2em 0;
+		font-size: 2.6em;
+	}
+	&__header-title-2 {
+		margin-top: 0;
+		font-size: 2.3em;
+	}
+	&__header-subtitle {
+		color: $color1;
+	}
+	&__button-container {
+		margin-top: 3em;
+	}
+	&__button {
+		text-decoration: none;
+		display: block;
+		line-height: 3;
+		border: 5px solid #fff;
+		border-radius: 8px;
+		font-size: 1.5em;
+		transition: all 250ms ease-in;
+		&:hover {
+			background-color: rgba(#fff, .15);
+		}
+	}
+}

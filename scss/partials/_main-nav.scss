@@ -1,19 +1,21 @@
 .main-nav {
-	position: absolute;
+	position: fixed;
 	top: 0;
-	left: 0;
+	right: -100%;
 	height: 100vh;
-	width: 100%; 
+	width: 100%;
 
 	display: flex;
 	justify-content: space-between;
+	transition: all 350ms ease-out;
+
+	&.show-menu {
+		right: 0;
+	}
 
 	//first section
 	&__navigation {
 		background-color: rgba($color2, .95);
-		position: fixed;
-		top: 0;
-		left: 0;
 		width: 70%;
 		height: 100vh;
 		padding-right: 1em;
@@ -45,28 +47,34 @@
 	//Second section
 	&__side-bar {
 		background-color: $color2;
-		position: fixed;
-		top: 0;
-		right: 0;
 		width: 30%;
 		height: 100vh;
+		position: relative;
 	}
 	&__rotate {
 		transform: rotate(90deg);
+		overflow: hidden;
+		width: 18em;
+		height: 4em;
+
 		position: absolute;
-		top: 10em;
-		background-color: steelblue;
+		left: -6em;
+		top: 15em;
 	}
 	&__social-follow {
 		color: #EFE8E0;
 		font-family: $fontTitle;
 		font-size: 1.4em;
+		float: left;
+		margin-right: 1em;
 	}
 	&__social-list {
-		
+		position: relative;
+		top: 1.1em;
 	}
 	&__social-item {
 		display: inline-block;
+		margin-right: 1em;
 	}
 	&__social-icon-fb,
 	&__social-icon-in,
@@ -76,27 +84,6 @@
 		transition: all 50ms ease-in;
 		&:hover {
 			fill: #fff;
-		}
-	}
-	&__social-icon-fb {
-
-	}
-	&__social-icon-in {
-		
-	}
-	&__social-icon-tw {
-
-	}
-	//Animation Nav
-	@keyframes {
-		0% {
-
-		}
-		50% {
-
-		}
-		100% {
-
 		}
 	}
 }

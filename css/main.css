@@ -13,8 +13,16 @@ img {
   max-width: 100%; }
 
 .header {
-  background-color: steelblue;
-  padding: 1em 0; }
+  background-color: transparent;
+  padding: 1em 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 550;
+  transition: all 250ms ease-out; }
+  .header.scroll-header {
+    background-color: #c2b69e; }
   .header__container {
     width: 90%;
     margin: 0 auto; }
@@ -32,26 +40,26 @@ img {
     height: 3em;
     fill: #fff;
     cursor: pointer;
-    position: fixed;
-    right: 1em;
-    top: 1em;
+    position: absolute;
+    right: 0;
+    top: -.1em;
     z-index: 600; }
 
 .main-nav {
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: 0;
+  right: -100%;
   height: 100vh;
   width: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  transition: all 350ms ease-out; }
+  .main-nav.show-menu {
+    right: 0; }
   .main-nav__navigation {
     background-color: rgba(194, 182, 158, 0.95);
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 70%;
     height: 100vh;
     padding-right: 1em; }
@@ -75,22 +83,29 @@ img {
       color: #500000; }
   .main-nav__side-bar {
     background-color: #c2b69e;
-    position: fixed;
-    top: 0;
-    right: 0;
     width: 30%;
-    height: 100vh; }
+    height: 100vh;
+    position: relative; }
   .main-nav__rotate {
     transform: rotate(90deg);
+    overflow: hidden;
+    width: 18em;
+    height: 4em;
     position: absolute;
-    top: 10em;
-    background-color: steelblue; }
+    left: -6em;
+    top: 15em; }
   .main-nav__social-follow {
     color: #EFE8E0;
     font-family: "Oswald", sans-serif;
-    font-size: 1.4em; }
+    font-size: 1.4em;
+    float: left;
+    margin-right: 1em; }
+  .main-nav__social-list {
+    position: relative;
+    top: 1.1em; }
   .main-nav__social-item {
-    display: inline-block; }
+    display: inline-block;
+    margin-right: 1em; }
   .main-nav__social-icon-fb, .main-nav__social-icon-in, .main-nav__social-icon-tw {
     fill: #EFE8E0;
     width: 2.5em;
@@ -98,7 +113,445 @@ img {
     .main-nav__social-icon-fb:hover, .main-nav__social-icon-in:hover, .main-nav__social-icon-tw:hover {
       fill: #fff; }
 
-@keyframes {
-  0% { }
-  50% { }
-  100% { } }
+.landing {
+  background: linear-gradient(rgba(194, 182, 158, 0.6), rgba(194, 182, 158, 0.6)), url(../images/landing-small.jpg) 50% 50%/cover no-repeat;
+  padding: 4em 0; }
+  .landing__container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center; }
+  .landing__copy-content {
+    margin: 5em 0; }
+  .landing__header-title-1, .landing__header-title-2, .landing__header-subtitle, .landing__button {
+    color: #fff;
+    font-family: "Bevan", cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
+  .landing__header-title-1, .landing__header-title-2 {
+    opacity: .8; }
+  .landing__header-title-1 {
+    margin: 0 0 .2em 0;
+    font-size: 2.6em; }
+  .landing__header-title-2 {
+    margin-top: 0;
+    font-size: 2.3em; }
+  .landing__header-subtitle {
+    color: #3C3531; }
+  .landing__button-container {
+    margin-top: 3em; }
+  .landing__button {
+    text-decoration: none;
+    display: block;
+    line-height: 3;
+    border: 5px solid #fff;
+    border-radius: 8px;
+    font-size: 1.5em;
+    transition: all 250ms ease-in; }
+    .landing__button:hover {
+      background-color: rgba(255, 255, 255, 0.15); }
+
+.package {
+  background-color: #F0EDE8;
+  padding: 4em  0; }
+  .package__container {
+    width: 90%;
+    margin: 0 auto; }
+  .package__header-title, .package__header-subtitle {
+    font-family: "Oswald", sans-serif; }
+  .package__header-title {
+    margin: 0;
+    font-size: 2em;
+    color: rgba(60, 53, 49, 0.7); }
+  .package__header-subtitle {
+    font-size: 1.5em;
+    color: rgba(80, 0, 0, 0.5);
+    position: relative;
+    padding-left: 1.5em; }
+    .package__header-subtitle:before {
+      content: " ";
+      width: 1.3em;
+      height: 3.5px;
+      background-color: rgba(80, 0, 0, 0.5);
+      position: absolute;
+      left: 0;
+      top: .5em; }
+  .package__header-description {
+    color: rgba(49, 45, 43, 0.8);
+    line-height: 1.7;
+    font-size: 1.2em; }
+  .package__items-container {
+    margin-top: 3em; }
+  .package__item {
+    margin-bottom: 2em; }
+  .package__item-img-background-1, .package__item-img-background-2, .package__item-img-background-3 {
+    height: 15em;
+    padding: 1em;
+    text-align: center;
+    border: 8px solid #3C3531;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center; }
+  .package__item-img-background-1 {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(../images/items-outings-3.jpg) 50% 50%/cover no-repeat; }
+  .package__item-img-background-2 {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(../images/items-outings-2.jpg) 50% 50%/cover no-repeat; }
+  .package__item-img-background-3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(../images/items-outings-1.jpg) 50% 50%/cover no-repeat; }
+  .package__item-title {
+    color: #fff;
+    margin: 0;
+    font-size: 1.9em;
+    line-height: 1.5;
+    opacity: .8;
+    font-family: "Oswald", sans-serif; }
+  .package__item-copy-content {
+    background-color: rgba(194, 182, 158, 0.3);
+    padding: 2em 1em;
+    text-align: center; }
+  .package__item-copy {
+    margin-top: 0;
+    color: rgba(49, 45, 43, 0.8);
+    font-size: 1.1em;
+    line-height: 1.6; }
+  .package__item-button {
+    display: inline-block;
+    line-height: 2.5;
+    padding: 0 2em;
+    border: 4px solid #3C3531;
+    border-radius: 10px;
+    color: #3C3531;
+    font-size: 1.2em;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 200ms ease-in; }
+    .package__item-button:hover {
+      background-color: #3C3531;
+      color: #fff; }
+
+.about {
+  padding: 4em  0;
+  background: linear-gradient(rgba(194, 182, 158, 0.75), rgba(194, 182, 158, 0.75)), url(../images/about-small.jpg) 50% 50%/cover no-repeat; }
+  .about__container {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center; }
+  .about__elements-container {
+    background-color: rgba(194, 182, 158, 0.5);
+    padding: 1.5em 1em; }
+  .about__title {
+    font-size: 1.8em;
+    font-family: "Bevan", cursive;
+    color: #500000;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
+  .about__text {
+    color: rgba(49, 45, 43, 0.8);
+    line-height: 1.7;
+    font-size: 1.2em; }
+  .about__button {
+    display: inline-block;
+    line-height: 2.5;
+    padding: 0 2em;
+    border: 4px solid #3C3531;
+    border-radius: 10px;
+    color: #3C3531;
+    font-size: 1.2em;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 200ms ease-in; }
+    .about__button:hover {
+      background-color: #3C3531;
+      color: #fff; }
+
+.press {
+  background-color: #F0EDE8;
+  padding: 4em  0; }
+  .press__container {
+    width: 90%;
+    margin: 0 auto; }
+  .press__header-title, .press__header-subtitle {
+    font-family: "Oswald", sans-serif; }
+  .press__header-title {
+    margin: 0;
+    font-size: 2em;
+    color: rgba(60, 53, 49, 0.7);
+    line-height: 1.4; }
+  .press__header-subtitle {
+    font-size: 1.5em;
+    color: rgba(80, 0, 0, 0.5);
+    position: relative;
+    padding-left: 1.5em; }
+    .press__header-subtitle:before {
+      content: " ";
+      width: 1.3em;
+      height: 3.5px;
+      background-color: rgba(80, 0, 0, 0.5);
+      position: absolute;
+      left: 0;
+      top: .5em; }
+  .press__items-container {
+    margin-top: 5em; }
+  .press__item {
+    background-color: rgba(194, 182, 158, 0.3);
+    padding: 2em 1em;
+    text-align: center;
+    margin-bottom: 2em; }
+  .press__item-logo-container {
+    margin: 0 auto;
+    width: 85%; }
+  .press__item-comment-container {
+    margin-top: 2em; }
+  .press__item-comment, .press__item-brand {
+    color: rgba(49, 45, 43, 0.8);
+    font-size: 1.1em; }
+  .press__item-comment {
+    margin-bottom: 0; }
+  .press__item-brand {
+    margin-top: .5em;
+    position: relative;
+    padding-left: 1.5em;
+    display: inline-block; }
+    .press__item-brand:before {
+      content: " ";
+      width: 1.1em;
+      height: 1px;
+      background-color: rgba(49, 45, 43, 0.8);
+      position: absolute;
+      left: 0;
+      top: .5em; }
+
+.blog {
+  background-color: rgba(240, 237, 232, 0.5);
+  padding: 4em  0; }
+  .blog__container {
+    width: 90%;
+    margin: 0 auto; }
+  .blog__header-title, .blog__header-subtitle {
+    font-family: "Oswald", sans-serif; }
+  .blog__header-title {
+    margin: 0;
+    font-size: 2em;
+    color: rgba(60, 53, 49, 0.7); }
+  .blog__header-subtitle {
+    font-size: 1.5em;
+    color: rgba(80, 0, 0, 0.5);
+    position: relative;
+    padding-left: 1.5em; }
+    .blog__header-subtitle:before {
+      content: " ";
+      width: 1.3em;
+      height: 3.5px;
+      background-color: rgba(80, 0, 0, 0.5);
+      position: absolute;
+      left: 0;
+      top: .5em; }
+  .blog__items-container {
+    margin-top: 4em; }
+  .blog__item {
+    margin-bottom: 2em; }
+  .blog__item-img-container {
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    border: 8px solid #3C3531;
+    overflow: hidden; }
+  .blog__item-img {
+    transform: scale(1.1); }
+  .blog__item-body {
+    background-color: rgba(194, 182, 158, 0.3);
+    padding: 2em 1em; }
+  .blog__item-date {
+    color: rgba(49, 45, 43, 0.8);
+    margin-top: 0; }
+  .blog__item-category {
+    text-transform: uppercase;
+    color: #500000; }
+  .blog__item-title {
+    color: rgba(49, 45, 43, 0.8);
+    line-height: 1.5;
+    font-size: 1.5em; }
+  .blog__item-button {
+    text-decoration: none;
+    color: rgba(80, 0, 0, 0.6);
+    font-size: 1.1em;
+    display: inline-block;
+    line-height: 3;
+    font-family: "Bevan", cursive;
+    position: relative; }
+    .blog__item-button:after {
+      content: " ";
+      width: 100%;
+      height: 3px;
+      background-color: rgba(80, 0, 0, 0.6);
+      position: absolute;
+      top: 2.5em;
+      left: 0; }
+  .blog__newsletter-container {
+    margin-top: 6em;
+    background-color: rgba(194, 182, 158, 0.7);
+    padding: 1.5em 1em; }
+  .blog__newsletter-header {
+    margin-bottom: 4em; }
+  .blog__newsletter-header-title, .blog__newsletter-header-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Oswald", sans-serif; }
+  .blog__newsletter-header-title {
+    margin: 0;
+    font-size: 2.5em; }
+  .blog__newsletter-header-subtitle {
+    margin-top: .5em;
+    font-size: 1.7em;
+    position: relative;
+    padding-left: 1.2em; }
+    .blog__newsletter-header-subtitle:before {
+      content: " ";
+      width: 1em;
+      height: 3.5px;
+      background-color: rgba(255, 255, 255, 0.6);
+      position: absolute;
+      left: 0;
+      top: .6em; }
+  .blog__newsletter-input-container {
+    margin-bottom: 1em; }
+  .blog__newsletter-form-input, .blog__newsletter-form-submit {
+    border: none;
+    border-radius: 8px;
+    width: 100%; }
+    .blog__newsletter-form-input:focus, .blog__newsletter-form-submit:focus {
+      outline: none; }
+  .blog__newsletter-form-input {
+    line-height: 3;
+    border: 1px solid #EDE7DF;
+    background-color: transparent;
+    color: #EDE7DF;
+    font-size: 1.2em;
+    text-align: center; }
+    .blog__newsletter-form-input::-webkit-input-placeholder {
+      color: #EDE7DF; }
+    .blog__newsletter-form-input:-ms-input-placeholder {
+      color: #EDE7DF; }
+    .blog__newsletter-form-input::placeholder {
+      color: #EDE7DF; }
+  .blog__newsletter-form-submit {
+    line-height: 3;
+    color: #fff;
+    font-family: "Bevan", cursive;
+    letter-spacing: 1px;
+    background-color: #3C3531;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 250ms ease-in; }
+    .blog__newsletter-form-submit:hover {
+      background-color: #4d443f; }
+
+.contact {
+  background-color: #F0EDE8;
+  padding: 4em  0; }
+  .contact__container {
+    width: 90%;
+    margin: 0 auto; }
+  .contact__header-title, .contact__header-subtitle {
+    font-family: "Oswald", sans-serif; }
+  .contact__header-title {
+    margin: 0;
+    font-size: 2em;
+    color: rgba(60, 53, 49, 0.7); }
+  .contact__header-subtitle {
+    font-size: 1.5em;
+    color: rgba(80, 0, 0, 0.5);
+    position: relative;
+    padding-left: 1.5em; }
+    .contact__header-subtitle:before {
+      content: " ";
+      width: 1.3em;
+      height: 3.5px;
+      background-color: rgba(80, 0, 0, 0.5);
+      position: absolute;
+      left: 0;
+      top: .5em; }
+  .contact__info-container {
+    position: relative;
+    padding: 3em 1em 5em;
+    background-color: rgba(194, 182, 158, 0.3);
+    text-align: center; }
+  .contact__info-title {
+    margin-top: 0;
+    color: rgba(60, 53, 49, 0.9);
+    text-transform: uppercase;
+    font-size: 1.9em;
+    font-family: "Oswald", sans-serif; }
+  .contact__info-button {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 3.5;
+    padding: 0 2em;
+    background-color: rgba(194, 182, 158, 0.5);
+    border-radius: 8px;
+    font-family: "Bevan", cursive;
+    font-size: 1.4em;
+    color: rgba(80, 0, 0, 0.7);
+    transition: all 250ms ease-in; }
+    .contact__info-button:hover {
+      transform: scale(0.95); }
+  .contact__info-links {
+    margin-top: 2em; }
+  .contact__info-inquiries, .contact__info-faq, .contact__info-inquiries-link, .contact__info-faq-link {
+    color: #312d2b;
+    font-size: 1.1em; }
+  .contact__info-inquiries-link, .contact__info-faq-link {
+    font-weight: 600; }
+  .contact__info-title-style {
+    position: absolute;
+    bottom: -.1 em;
+    left: 0;
+    font-size: 4.5em;
+    font-family: "Oswald", sans-serif;
+    color: rgba(194, 182, 158, 0.4); }
+
+.footer {
+  background: linear-gradient(rgba(194, 182, 158, 0.6), rgba(194, 182, 158, 0.6)), url(../images/footer-bg-small.jpg) 50% 50%/cover no-repeat;
+  padding: 6em  0; }
+  .footer__container {
+    width: 90%;
+    margin: 0 auto; }
+  .footer__elements-container {
+    text-align: center; }
+  .footer__header {
+    margin-bottom: 5em; }
+  .footer__header-title-1, .footer__header-title-2 {
+    color: #fff;
+    font-family: "Bevan", cursive;
+    text-transform: uppercase;
+    letter-spacing: 1px; }
+  .footer__header-title-1, .footer__header-title-2, .footer__logo {
+    opacity: .8; }
+  .footer__header-title-1 {
+    margin: 0 0 .2em 0;
+    font-size: 2.6em; }
+  .footer__header-title-2 {
+    margin-top: 0;
+    font-size: 2.3em; }
+  .footer__logo {
+    width: 14em;
+    fill: #fff;
+    margin-bottom: 2em; }
+  .footer__social-list {
+    margin: 0;
+    padding-left: 0;
+    list-style: none; }
+  .footer__social-item {
+    display: inline-block; }
+  .footer__social-logo-fb, .footer__social-logo-in, .footer__social-logo-tw {
+    fill: #EFE8E0;
+    width: 2.5em;
+    transition: all 50ms ease-in; }
+    .footer__social-logo-fb:hover, .footer__social-logo-in:hover, .footer__social-logo-tw:hover {
+      fill: #fff; }
+  .footer__social-logo-in {
+    margin: 0 2em; }
