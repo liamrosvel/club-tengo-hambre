@@ -183,9 +183,6 @@ img {
         width: 1110px; } }
   .landing__copy-content {
     margin: 5em 0; }
-    @media screen and (min-width: 480px) {
-      .landing__copy-content {
-        margin: 10em 0; } }
   .landing__header-title-1, .landing__header-title-2, .landing__header-subtitle, .landing__button {
     color: #fff;
     font-family: "Bevan", cursive;
